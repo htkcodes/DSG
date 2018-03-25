@@ -60,7 +60,11 @@ app.use(ExpressValidator({
 
 
 mongoose.connect(secret.database);
-var db=mongoose.connection;
+const db=mongoose.connection;
+
+db.once('open', () => {
+  console.log('DB is connected');
+});
 
 app.use('/', index);
 app.use('/users', users);
