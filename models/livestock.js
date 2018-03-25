@@ -3,13 +3,13 @@ var mongoose = require('mongoose');
 let Schema=mongoose.Schema;
 var LiveStockSchema = Schema({
 	Location_Code: {
-		type: String
+		type: Number
 	},
 	Property_Size: {
-		type: String
+		type: Number
 	},
 	Parish_Code: {
-		type: String
+		type: Number
 	},
 Parish_Extension_Code: {
 		type: Number
