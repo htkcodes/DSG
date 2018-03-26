@@ -1,0 +1,97 @@
+extends layout
+block content
+    .app-content.content
+      .content-wrapper
+        .content-header.row
+          .content-header-left.col-md-6.col-12.mb-2.breadcrumb-new
+            h3.content-header-title.mb-0.d-inline-block Other Charts
+            .row.breadcrumbs-top.d-inline-block
+              .breadcrumb-wrapper.col-12
+                ol.breadcrumb
+                  li.breadcrumb-item
+                    a(href='index.html') Home
+                  li.breadcrumb-item
+                    a(href='#') Google Charts
+                  li.breadcrumb-item.active
+                    | Other Charts
+          .content-header-right.col-md-6.col-12
+            .dropdown.float-md-right
+              button#dropdownBreadcrumbButton.btn.btn-danger.dropdown-toggle.round.btn-glow.px-2(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') Actions
+              .dropdown-menu(aria-labelledby='dropdownBreadcrumbButton')
+                a.dropdown-item(href='#')
+                  i.la.la-calendar-check-o
+                  |  Calender
+                a.dropdown-item(href='#')
+                  i.la.la-cart-plus
+                  |  Cart
+                a.dropdown-item(href='#')
+                  i.la.la-life-ring
+                  |  Support
+                .dropdown-divider
+                a.dropdown-item(href='#')
+                  i.la.la-cog
+                  |  Settings
+        .content-body
+          // Google other charts section start
+          section#google-other-charts
+            // Geo Chart
+            .row
+              .col-12
+                .card
+                  .card-header
+                    h4.card-title Geo Chart
+                    a.heading-elements-toggle
+                      i.la.la-ellipsis-h.font-medium-3
+                    .heading-elements
+                      ul.list-inline.mb-0
+                        li
+                          a(data-action='collapse')
+                            i.ft-minus
+                        li
+                          a(data-action='reload')
+                            i.ft-rotate-cw
+                        li
+                          a(data-action='expand')
+                            i.ft-maximize
+                        li
+                          a(data-action='close')
+                            i.ft-x
+                  .card-body
+                    .card-body
+                      p.card-text
+                        | A geochart is a map of a country, a continent, or a region with
+                        | areas identified in one of three ways:
+                      ul
+                        li
+                          | The region mode colors whole regions, such as countries, provinces,
+                          | or states.
+                        li
+                          | The markers mode uses circles to designate regions that are
+                          | scaled according to a value that you specify.
+                        li
+                          | The text mode labels the regions with identifiers (e.g., "Russia"
+                          | or "Asia").
+                      p.card-text
+                        | A geochart is rendered within the browser using SVG or VML. Note
+                        | that the geochart is not scrollable or draggable, and it's
+                        | a line drawing rather than a terrain map; if you want any of
+                        | that, consider a map visualization instead.
+                      #geo-chart
+              if results
+                  p.hidden.james(data-livestock=results.jlivestockCount[0].total,data-farmercount=results.jfarmersCount[0].total)
+                  p.hidden.eliza(data-livestock=results.elivestockCount[0].total,data-farmercount=results.efarmersCount[0].total)
+                  p.hidden.cc(data-livestock=results.cclivestockCount[0].total,data-farmercount=results.ccfarmersCount[0].total)
+                  p.hidden.port(data-livestock=results.plivestockCount[0].total,data-farmercount=results.pfarmersCount[0].total)
+                  p.hidden.mary(data-livestock=results.mlivestockCount[0].total,data-farmercount=results.mfarmersCount[0].total)
+                  p.hidden.thom(data-livestock=results.tlivestockCount[0].total,data-farmercount=results.tfarmersCount[0].total)
+                  p.hidden.trel(data-livestock=results.trlivestockCount[0].total,data-farmercount=results.trfarmersCount[0].total)
+                  p.hidden.west(data-livestock=results.wlivestockCount[0].total,data-farmercount=results.wfarmersCount[0].total)
+                  p.hidden.cath(data-livestock=results.clivestockCount[0].total,data-farmercount=results.cfarmersCount[0].total)
+                  p.hidden.ann(data-livestock=results.annlivestockCount[0].total,data-farmercount=results.annfarmersCount[0].total)
+                  p.hidden.and(data-livestock=results.andrewlivestockCount[0].total,data-farmercount=results.andrewfarmersCount[0].total)
+                  p.hidden.man(data-livestock=results.manlivestockCount[0].total,data-farmercount=results.manfarmersCount[0].total)
+                  p.hidden.han(data-livestock=results.hanlivestockCount[0].total,data-farmercount=results.hanfarmersCount[0].total)
+    
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+    script(type='text/javascript', src='https://www.gstatic.com/charts/loader.js')
+    script(type='text/javascript' src='/javascripts/chart.js')
